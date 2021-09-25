@@ -3,6 +3,9 @@
 #+export_file_name: index
 #+setupfile: ~/.emacs.d/org-templates/projects.org
 
+* Contract
+
+Memoir contract is written with ~smartpy~.
 
 * Team Delta Proioxis
 
