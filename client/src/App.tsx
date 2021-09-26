@@ -30,7 +30,7 @@ const App = () => {
   const [activeTab, setActiveTab] = useState<string>("transfer");
 
   // Granadanet Memoir contract
-  const contractAddress: string = "KT1PjaJZxYvE335fdD7GXLshPWdFAYan1ta3";
+  const contractAddress: string = "KT1XDxSuXHBBtLDZRd2ZpEMYkxgutMc7a6mU";
 
   const generateQrCode = (): { __html: string } => {
     const qr = qrcode(0, "L");
@@ -172,11 +172,11 @@ const App = () => {
                      <summary>
                       {JSON.parse(storage.records[idx]).date}
                      </summary>
-                     Name: {JSON.parse(storage.records[idx]).name}<br></br>
-                     Age: {JSON.parse(storage.records[idx]).age}<br></br>
-                     Height: {JSON.parse(storage.records[idx]).height}<br></br>
-                     Weight: {JSON.parse(storage.records[idx]).weight}<br></br>
-                     Prescription: {JSON.parse(storage.records[idx]).prescription}<br></br>
+                     <b>Name:</b> {JSON.parse(storage.records[idx]).name}<br></br>
+                     <b>Age:</b> {JSON.parse(storage.records[idx]).age}<br></br>
+                     <b>Height:</b> {JSON.parse(storage.records[idx]).height}<br></br>
+                     <b>Weight:</b> {JSON.parse(storage.records[idx]).weight}<br></br>
+                     <b>Prescription:</b> {JSON.parse(storage.records[idx]).prescription}<br></br>
                     </details>
                    </div>)}
 

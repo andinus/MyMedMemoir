@@ -224,7 +224,7 @@ input[type="number"] {
     padding-left: 30px;
 }
 details {
-    border: 1px solid #aaa;
+    border: 1px dashed var(--red);
     border-radius: 4px;
     padding: .5em .5em 0;
 }
@@ -240,10 +240,20 @@ details[open] {
 }
 
 details[open] summary {
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid var(--red);
     margin-bottom: .5em;
 }
 .apneReports{
     padding-top: 10px;
     line-height: 1.5;
+}
+.labelIska {
+    font-weight: 700;
+}
+input, textarea {
+    border: 1px solid var(--red);
+}
+textarea {
+    width: 95%;
+    height: 120px;
 }
