@@ -1,3 +1,7 @@
+:root {
+    --red: #b60000;
+}
+
 html,
 body,
 #root {
@@ -6,6 +10,7 @@ body,
     margin: 0px;
     padding: 0px;
     font-size: 1rem;
+    font-family: "OpenSans", sans-serif;
 }
 
 #root {
@@ -24,14 +29,14 @@ body,
 }
 
 h1 {
-    color: #35636e;
+    color: var(--red);
     text-align: left;
 }
 
 header {
     font-size: 1.5rem;
     padding: 20px;
-    background-color: #35636e;
+    background-color: var(--red);
     color: white;
 }
 
@@ -40,7 +45,7 @@ header {
     flex-direction: column;
     width: 96vw;
     max-width: 720px;
-    border: 1px solid #35636e;
+    border: 1px solid var(--red);
     border-radius: 3px;
 }
 
@@ -52,8 +57,16 @@ header {
 
 #footer {
     display: flex;
+    height: 5em;
+
     justify-content: flex-end;
     padding-top: 20px;
+    width: 384px;
+    right: 0;
+    position: fixed;
+    
+    max-width: 720px;
+    background-repeat: no-repeat;
 }
 
 .buttons {
@@ -66,19 +79,19 @@ header {
 .button {
     margin-top: 0px;
     margin-bottom: 5px;
-    color: #35636e;
+    color: var(--red);
     font-size: 1rem;
     padding: 15px;
     background-color: white;
     border-radius: 3px;
-    border: solid 2px #35636e;
+    border: solid 2px var(--red);
     outline: none;
     cursor: pointer;
     transition: 0.2s;
 }
 .button:hover {
     color: white;
-    background-color: #35636e;
+    background-color: var(--red);
 }
 .button:active {
     margin-top: 5px;
@@ -100,7 +113,7 @@ header {
 #public-token-copy:hover {
     border-radius: 3px;
     color: white;
-    background-color: #35636e;
+    background-color: var(--red);
 }
 
 .text-align-center {
@@ -120,7 +133,7 @@ a:hover {
     flex-direction: row;
     justify-content: space-around;
     border: none;
-    color: #35636e;
+    color: var(--red);
     margin: 0px;
     transition: 0.3s;
 }
@@ -129,7 +142,7 @@ a:hover {
     width: 80%;
     padding: 16px;
     margin: 0px 10px;
-    border: solid 1px #35636e;
+    border: solid 1px var(--red);
     border-bottom: none;
     text-align: center;
     border-top-left-radius: 3px;
@@ -138,7 +151,7 @@ a:hover {
 }
 
 #tabs div.active {
-    background-color: #35636e;
+    background-color: var(--red);
     color: white;
 }
 
@@ -154,7 +167,7 @@ a:hover {
     padding: 15px;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
-    border: solid 2px #35636e;
+    border: solid 2px var(--red);
     outline: none;
     font-size: 1rem;
     border-right: none;
@@ -165,7 +178,7 @@ a:hover {
 #transfer-inputs input[type="number"] {
     padding: 15px;
     width: 60px;
-    border: solid 2px #35636e;
+    border: solid 2px var(--red);
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
     border-left: none;
@@ -188,4 +201,22 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
     -moz-appearance: textfield;
+}
+
+.form-apna {
+   padding: 0.8em;
+}
+
+.formFields {
+    padding: 0.2em;
+    margin: 0.2em;
+}
+
+#form-name {
+    width: 50%;
+}
+
+#form-ka-button {
+    padding-left: 78%;
+    margin-right: 0;
 }

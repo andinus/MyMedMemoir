@@ -24,13 +24,13 @@ const App = () => {
   const [wallet, setWallet] = useState<any>(null);
   const [userAddress, setUserAddress] = useState<string>("");
   const [userBalance, setUserBalance] = useState<number>(0);
-  const [storage, setStorage] = useState<any>({dates: []});
+  const [storage, setStorage] = useState<any>({dates: [], records: [],});
   const [copiedPublicToken, setCopiedPublicToken] = useState<boolean>(false);
   const [beaconConnection, setBeaconConnection] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<string>("transfer");
 
   // Granadanet Memoir contract
-  const contractAddress: string = "KT1T4idqQZpt1Ayn9SRNqCo7PsiBreT5YsMB";
+  const contractAddress: string = "KT1PjaJZxYvE335fdD7GXLshPWdFAYan1ta3";
 
   const generateQrCode = (): { __html: string } => {
     const qr = qrcode(0, "L");
@@ -45,7 +45,7 @@ const App = () => {
       <div className="main-box">
         <h1>MyMedMemoir</h1>
         <div id="dialog">
-          <header>Try the Taquito Boilerplate App!</header>
+          <header>Decentralized Medical Reports</header>
           <div id="content">
             <p className="text-align-center">
               <i className="fas fa-broadcast-tower"></i>&nbsp; Connecting to
@@ -117,7 +117,7 @@ const App = () => {
         </div>
         <div id="dialog">
           <div id="content">
-            {activeTab === "transfer" && 
+            {activeTab === "transfer" &&
               <div id="transfers">
                 <h3 className="text-align-center">Make a transfer</h3>
                 <Transfers
@@ -153,7 +153,7 @@ const App = () => {
                 />
               </div>
             }
-            {activeTab === "contract" && 
+            {activeTab === "contract" &&
               <div id="increment-decrement">
                 <Records
                    contract={contract}
@@ -164,14 +164,20 @@ const App = () => {
                 />
               </div>
             }
-            {activeTab === "reports" && 
+            {activeTab === "reports" &&
               <div id="increment-decrement">
-                <h3 className="text-align-center">
-                 {storage.dates.map((val: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined) => <div>{val}</div>)}
-                </h3>
+                 {storage.dates.map((val: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined, idx: any) =>
+                 <div className="apneReports">
+                   <details>
+                     <summary>
+                     {JSON.parse(storage.records[idx]).date}
+                     </summary>
+                     {JSON.parse(storage.records[idx]).name}
+                    </details>
+                   </div>)}
+
               </div>
             }
-            
           </div>
         </div>
         <div id="footer">
@@ -188,7 +194,7 @@ const App = () => {
           <header>Welcome to MyMedMemoir!</header>
           <div id="content">
             <p>Hello!</p>
-            <p>Go forth and Tezos!</p>
+            <p>Go forth and M³!</p>
           </div>
           <ConnectButton
             Tezos={Tezos}
@@ -204,6 +210,8 @@ const App = () => {
           />
         </div>
         <div id="footer">
+          <h1> hi</h1>
+          <img src="./footer.png"/>
         </div>
       </div>
     );

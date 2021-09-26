@@ -13,10 +13,28 @@ const Records = ({ contract, setUserBalance, Tezos, userAddress, setStorage }: R
   const [loadingIncrement, setLoadingIncrement] = useState<boolean>(false);
   const [loadingDecrement, setLoadingDecrement] = useState<boolean>(false);
 
+  const [formKaName, setName] = useState('');
+  const [formKaDate, setDate] = useState('');
+  const [formKaHeight, setHeight] = useState('');
+  const [formKaWeight, setWeight] = useState('');
+  const [formKaAge, setAge] = useState('');
+  const [formKaHospital, setHospital] = useState('');
+  const [formKaPrescription, setPrescription] = useState('');
+
   const addRecord = async (): Promise<void> => {
     setLoadingIncrement(true);
     try {
-      const op = await contract.methods.default("tesds").send();
+      const apnaForm = {
+        name: formKaName,
+        date: formKaDate,
+        age: formKaAge,
+        height: formKaHeight,
+        weight: formKaWeight,
+        hospital: formKaHospital,
+        prescription: formKaPrescription,
+      };
+      console.log(JSON.stringify(apnaForm));
+      const op = await contract.methods.default(JSON.stringify(apnaForm)).send();
       await op.confirmation();
       const newStorage: any = await contract.storage();
       if (newStorage) setStorage(newStorage);
@@ -30,18 +48,44 @@ const Records = ({ contract, setUserBalance, Tezos, userAddress, setStorage }: R
 
   if (!contract && !userAddress) return <div>&nbsp;</div>;
   return (
-    <div className="buttons">
-      <button className="button" disabled={loadingIncrement} onClick={addRecord}>
-        {loadingIncrement ? (
-          <span>
-            <i className="fas fa-spinner fa-spin"></i>&nbsp; Please wait
+    <div>
+      <form action="" method="get" className="form-apna">
+          <label className="labelIska">Doctor: </label>
+          <input type="text" className="formFields" id="form-name" 
+          onChange={event => setName(event.target.value)} required/>
+          <br/>
+          <label className="labelIska">Date: </label>
+          <input type="date" className="formFields" id="form-date" 
+          onChange={event => setDate(event.target.value)} required/><br/>
+          <label className="labelIska">Age: </label>
+          <input type="number" className="formFields" id="form-age" 
+          onChange={event => setAge(event.target.value)} required/><br/>
+          <label className="labelIska">Height: </label>
+          <input type="number" className="formFields" id="form-height" 
+          onChange={event => setHeight(event.target.value)} required/><br/>
+          <label className="labelIska">Weight: </label>
+          <input type="number" className="formFields" id="form-date" 
+          onChange={event => setWeight(event.target.value)} required/><br/>
+          <label className="labelIska">Hospital: </label>
+          <input type="text" className="formFields" id="form-hospital" 
+          onChange={event => setHospital(event.target.value)} required/><br/>
+          <label className="labelIska">Presciption: </label>
+          <input type="textbox" className="formFields" id="form-prescription"
+          onChange={event => setPrescription(event.target.value)}/><br/>
+          <span id="form-ka-button">
+          <button type="submit"  className="button" disabled={loadingIncrement} onClick={addRecord}>
+            {loadingIncrement ? (
+              <span>
+                <i className="fas fa-spinner fa-spin"></i>&nbsp; Please wait
+              </span>
+            ) : (
+              <span>
+                <i className="fas fa-plus"></i>&nbsp; Add Record
+              </span>
+            )}   
+          </button>
           </span>
-        ) : (
-          <span>
-            <i className="fas fa-plus"></i>&nbsp; Add Record
-          </span>
-        )}
-      </button>
+      </form>
     </div>
   );
 };

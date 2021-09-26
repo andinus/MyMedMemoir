@@ -86,7 +86,7 @@ const ConnectButton = ({
     (async () => {
       // creates a wallet instance
       const wallet = new BeaconWallet({
-        name: "Taquito Boilerplate",
+        name: "MyMedMemoir",
         preferredNetwork: NetworkType.GRANADANET,
         disableDefaultEvents: true, // Disable all events / UI. This also disables the pairing alert.
         eventHandlers: {
