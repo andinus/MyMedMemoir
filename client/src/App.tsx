@@ -170,9 +170,13 @@ const App = () => {
                  <div className="apneReports">
                    <details>
                      <summary>
-                     {JSON.parse(storage.records[idx]).date}
+                      {JSON.parse(storage.records[idx]).date}
                      </summary>
-                     {JSON.parse(storage.records[idx]).name}
+                     Name: {JSON.parse(storage.records[idx]).name}<br></br>
+                     Age: {JSON.parse(storage.records[idx]).age}<br></br>
+                     Height: {JSON.parse(storage.records[idx]).height}<br></br>
+                     Weight: {JSON.parse(storage.records[idx]).weight}<br></br>
+                     Prescription: {JSON.parse(storage.records[idx]).prescription}<br></br>
                     </details>
                    </div>)}
 
