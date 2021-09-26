@@ -6,11 +6,11 @@
 Memoir contract is written with ~smartpy~.
 
 - ~landing/~: Host at root.
-- ~public/~: Host at ~app/~.
+- ~public/~: Host at ~App/~.
 
 - Video: https://andinus.nand.sh/MyMedMemoir/video.mp4
 - Landing: https://andinus.nand.sh/MyMedMemoir
-- App: https://andinus.nand.sh/MyMedMemoir/app
+- App: https://andinus.nand.sh/MyMedMemoir/App
 
 * Team Delta Proioxis
 
