@@ -39,6 +39,7 @@ const Records = ({ contract, setUserBalance, Tezos, userAddress, setStorage }: R
       const newStorage: any = await contract.storage();
       if (newStorage) setStorage(newStorage);
       setUserBalance(await Tezos.tz.getBalance(userAddress));
+      alert("Record Saved.");
     } catch (error) {
       console.log(error);
     } finally {
@@ -51,26 +52,26 @@ const Records = ({ contract, setUserBalance, Tezos, userAddress, setStorage }: R
     <div>
       <form action="" method="get" className="form-apna">
           <label className="labelIska">Doctor:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
-          <input type="text" className="formFields" id="form-name" 
+          <input type="text" className="formFields" id="form-name"
           onChange={event => setName(event.target.value)} required/>
           <br/>
           <label className="labelIska">Date: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-          <input type="date" className="formFields" id="form-date" 
+          <input type="date" className="formFields" id="form-date"
           onChange={event => setDate(event.target.value)} required/><br/>
           <label className="labelIska">Age:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-          <input type="number" className="formFields" id="form-age" 
+          <input type="number" className="formFields" id="form-age"
           onChange={event => setAge(event.target.value)} required/><br/>
           <label className="labelIska">Height:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-          <input type="number" className="formFields" id="form-height" 
+          <input type="number" className="formFields" id="form-height"
           onChange={event => setHeight(event.target.value)} required/><br/>
           <label className="labelIska">Weight:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-          <input type="number" className="formFields" id="form-date" 
+          <input type="number" className="formFields" id="form-date"
           onChange={event => setWeight(event.target.value)} required/><br/>
           <label className="labelIska">Hospital:&nbsp;</label>&nbsp;&nbsp;&nbsp;
-          <input type="text" className="formFields" id="form-hospital" 
+          <input type="text" className="formFields" id="form-hospital"
           onChange={event => setHospital(event.target.value)} required/><br/>
           <br/>
-          <label className="labelIska">Presciption: </label><br/>
+          <label className="labelIska">Prescription: </label><br/>
           <textarea className="formFields" id="form-prescription"
           onChange={event => setPrescription(event.target.value)}/><br/>
           <span id="form-ka-button">
@@ -83,7 +84,7 @@ const Records = ({ contract, setUserBalance, Tezos, userAddress, setStorage }: R
               <span>
                 <i className="fas fa-plus"></i>&nbsp; Add Record
               </span>
-            )}   
+            )}
           </button>
           </span>
       </form>
