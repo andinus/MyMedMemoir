@@ -3,9 +3,10 @@
 #+export_file_name: index
 #+setupfile: ~/.emacs.d/org-templates/projects.org
 
-* Contract
-
 Memoir contract is written with ~smartpy~.
+
+- ~landing/~: Host at root.
+- ~public/~: Host at ~app/~.
 
 * Team Delta Proioxis
 
