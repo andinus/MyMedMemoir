@@ -3,14 +3,14 @@
 #+export_file_name: index
 #+setupfile: ~/.emacs.d/org-templates/projects.org
 
-Memoir contract is written with ~smartpy~.
+- Hackathon: https://csi-fcrit-computer.github.io/DEV-A-THON/ ([[https://web.archive.org/web/20211011153523/https://csi-fcrit-computer.github.io/DEV-A-THON/][Archive]])
 
-- ~landing/~: Host at root.
-- ~public/~: Host at ~App/~.
+| Application      | https://andinus.unfla.me/MyMedMemoir          |
+| Project Homepage | https://andinus.unfla.me/projects/MyMedMemoir |
+| Demo Video       | https://diode.zone/w/pm6dQGvTP77MT5KoipecPH   |
 
-- Video: https://andinus.nand.sh/MyMedMemoir/video.mp4
-- Landing: https://andinus.nand.sh/MyMedMemoir
-- App: https://andinus.nand.sh/MyMedMemoir/App
+| Source          | https://git.unfla.me/MyMedMemoir       |
+| GitHub (mirror) | https://github.com/andinus/MyMedMemoir |
 
 * Team Delta Proioxis
 
@@ -20,6 +20,37 @@ Memoir contract is written with ~smartpy~.
 - [[https://github.com/blanklavender][Mahima]]
 - [[https://github.com/lishakothari][Lisha]]
 - [[https://github.com/andinus][Andinus]]
+
+* Thoughts
+
+** Andinus
+
+#+begin_quote
+The idea behind the project was to create an application for users to
+store their medical records. It would be stored on Tezos blockchain.
+
+Currently, the storage is not encrypted and is shared between all the
+users, the storage can be separated in the smart contract, this will
+also prevent other's from editing one's records. For encryption we can
+ask the user for a key on every login and the records would be encrypted
+with that key.
+
+This probably wasn't the best use of technologies, I think it's best to
+use them for data that is to be public information. It would be
+distributed and you always know the source of the information, knowing
+the source is something we didn't do anything with in this project.
+
+That said, it was fun to work on this!
+
+- https://andinus.unfla.me/writings/2021/csi-hackathon.html
+#+end_quote
+
+* Development
+
+Memoir contract is written with ~smartpy~.
+
+- ~landing/~: Host at root.
+- ~public/~: Host at ~App/~.
 
 * License
 
