@@ -51,6 +51,12 @@ That said, it was fun to work on this!
 This project was a great learning experience as I took my first dive into the world of blockchain and cryptocurrency. I worked on the front-end part of the medical records. In the entire duration of the hackathon, I learnt a lot from my teammates and was able to step up my programming skills to a new level. All in all, It was exciting to build an application but under a time constraint.
 #+end_quote
 
+** RishiRats
+
+#+begin_quote
+It was a great experience, I was involved in making landing page and overall planing of project. I learnt many new things during the process of making this application. And the stress was real because of time limits.
+#+end_quote
+
 * Development
 
 Memoir contract is written with ~smartpy~.
